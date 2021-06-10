@@ -9,6 +9,15 @@ export const fetchPosts = () => async (dispatch) => {
     })
 }
 
+export const fetchUser = (id) => async (dispatch) => {
+    const response = await jsonplaceholder.get(`/users/${id}`)
+
+    dispatch({
+        type: 'FETCH_USER',
+        payload: response.data
+    })
+}
+
 /*
 we are using the inner function, so we can do async, await.
 we use dispatch to return the action object(type and payload), we do not return
