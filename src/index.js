@@ -15,3 +15,8 @@ ReactDOM.render(
     </Provider>,
     document.querySelector('#root')
 )
+
+/*
+Redux thunk allows you to return a function i.e async await function, from an action creator.
+redux can only return a normal object from an action creator(check actions file)
+*/

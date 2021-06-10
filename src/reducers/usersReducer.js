@@ -6,3 +6,7 @@ export default (state = [], action) => {
             return state
     }
 }
+
+
+// action.payload is adding each individual user 
+// into state. Each user related to the post

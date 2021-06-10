@@ -35,11 +35,9 @@ class PostList extends React.Component {
 }
 
 const mapStateToProps = (state) => {
+    console.log(state)
     return { posts: state.posts }
 }
 export default connect(mapStateToProps, { fetchPosts })(PostList)
 
-/*
-Redux thunk allows you to return a function eg async await function, from an action creator.
-redux can only return a normal object from an action creator
-*/
+
