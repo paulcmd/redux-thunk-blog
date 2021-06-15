@@ -28,7 +28,7 @@ export default connect(mapStateToProps, { fetchUser })(UserHeader)
 /*
 -fetchUser action creator is coming in from actions expeting to receive an id from
 this component. id is sent in as a prop from PostList as userId.
-
+-ownProps is provided to grab this component's own props.
 */
 
 /*
