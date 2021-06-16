@@ -1,11 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { fetchUser } from '../actions'
 
 class UserHeader extends Component {
-    componentDidMount() {
-        this.props.fetchUser(this.props.userId)
-    }
 
     render() {
         const { user } = this.props
@@ -23,7 +19,7 @@ const mapStateToProps = (state, ownProps) => {
      
 }
 
-export default connect(mapStateToProps, { fetchUser })(UserHeader)
+export default connect(mapStateToProps)(UserHeader)
 
 /*
 -fetchUser action creator is coming in from actions expeting to receive an id from
@@ -58,5 +54,8 @@ class UserHeader extends Component {
 const mapStateToProps = (state) => {
     return { users: state.users }
 }
+
+- deleted fetchUser action creator after introducing fetchPostsAndUsers. Users are now being
+ fetched from one action creator
 
 */
