@@ -72,4 +72,15 @@ const _fetchUser = _.memoize(async(id, dispatch) => {
     })
 })
 
+optional refactor: you can use _.chain from lodash to chain the workflow
+
+_.chain(getState().posts)
+ .map('userId')
+  .uniq()
+   .forEach((id)=> dispatch(fetchUser(id)))
+   .value()
+    
+   getState().props is the first arg passed into chain, the rest follow
+   .value() excutes the chain. without it the chain wont work.
+
 */
